@@ -4,6 +4,7 @@ import '../colors/strategies/argb-strategy';
 import '../colors/strategies/rgb-strategy';
 import '../colors/strategies/browser-strategy';
 import '../colors/strategies/hsl-strategy';
+import '../colors/strategies/bare-rgb-strategy';
 import ColorExtractor from '../colors/color-extractor';
 import ColorDecoration from '../colors/color-decoration';
 import { Range, TextEditorDecorationType } from 'vscode';
@@ -98,7 +99,7 @@ class ColorUtil {
     ColorExtractor.enableStrategies(extractors);
   }
 
-  public static generateDecoration(color: IColor, line: number, decorationFn): IDecoration {
+  public static generateDecoration(color: IColor, line: number, decorationFn: (color: Color) => TextEditorDecorationType): IDecoration {
     return new ColorDecoration(<Color>color, line, decorationFn);
   }
 }

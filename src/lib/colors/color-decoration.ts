@@ -26,7 +26,7 @@ class ColorDecoration implements IDecoration {
   public disposed = false;
   public hidden = false;
 
-  private decorationFn: (Color) => TextEditorDecorationType
+  private decorationFn: (color: Color) => TextEditorDecorationType;
 
   public currentRange: Range;
   private _decoration: TextEditorDecorationType;
@@ -48,7 +48,7 @@ class ColorDecoration implements IDecoration {
     return this.color.rgb;
   }
 
-  public constructor(color: Color, line: number, decorationFn) {
+  public constructor(color: Color, line: number, decorationFn: (color: Color) => TextEditorDecorationType) {
     this.color = color;
     this.decorationFn = decorationFn;
     this.generateRange(line);

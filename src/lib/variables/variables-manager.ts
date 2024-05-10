@@ -9,6 +9,7 @@ import './strategies/stylus-strategy';
 import * as fs from 'fs';
 import { workspace, window, StatusBarAlignment, StatusBarItem, Uri, ThemeColor, TextEditorDecorationType } from 'vscode';
 import { DocumentLine, LineExtraction } from '../util/color-util';
+import type Color from '../colors/color';
 
 class VariablesManager {
   private statusBar: StatusBarItem;
@@ -63,7 +64,7 @@ class VariablesManager {
     return VariablesExtractor.findVariable(variable);
   }
 
-  public generateDecoration(variable: Variable, line: number, decorationFn: (Color) => TextEditorDecorationType): VariableDecoration {
+  public generateDecoration(variable: Variable, line: number, decorationFn: (color: Color) => TextEditorDecorationType): VariableDecoration {
     return new VariableDecoration(variable, line, decorationFn);
   }
 

@@ -14,7 +14,7 @@ interface ColorizeConfig {
   filesToIncludes: string[];
   inferedFilesToInclude: string[];
   searchVariables: boolean;
-  decorationFn: (Color) => TextEditorDecorationType
+  decorationFn: (color: Color) => TextEditorDecorationType
 }
 
 function getColorizeConfig(): ColorizeConfig {

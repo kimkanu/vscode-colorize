@@ -28,7 +28,7 @@ class VariableDecoration implements IDecoration {
 
   private hidden = false;
 
-  private decorationFn: (Color) => TextEditorDecorationType
+  private decorationFn: (color: Color) => TextEditorDecorationType
 
   public currentRange: Range;
   private _decoration: TextEditorDecorationType;
@@ -50,7 +50,7 @@ class VariableDecoration implements IDecoration {
     return this.variable.color.rgb;
   }
 
-  public constructor(variable: Variable, line: number, decorationFn: (Color) => TextEditorDecorationType) {
+  public constructor(variable: Variable, line: number, decorationFn: (color: Color) => TextEditorDecorationType) {
     this.variable = variable;
     this.decorationFn = decorationFn;
     if (this.variable.color) {
